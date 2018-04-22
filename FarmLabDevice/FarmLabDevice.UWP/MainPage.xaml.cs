@@ -29,8 +29,13 @@ namespace FarmLabDevice.UWP
                 // Sign in with Facebook login using a server-managed flow.
                 if (_user == null)
                 {
-                    _user = await FarmLabManager.DefaultManager.CurrentClient
-                        .LoginAsync(MobileServiceAuthenticationProvider.Google, "https://farmlab.azurewebsites.net/signin-google");
+                    var defaultManagerCurrentClient = FarmLabManager.DefaultManager.CurrentClient;
+                    var provider = MobileServiceAuthenticationProvider.Google;
+
+                    //     _user = await defaultManagerCurrentClient.LoginAsync(provider, "localhost:52344); ///.auth/login/google");
+                    _user = await defaultManagerCurrentClient.LoginAsync(provider, "farmlab");
+
+
                     if (_user != null)
                     {
                         success = true;

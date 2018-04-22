@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("App3.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("FarmLab.Droid.Resource", IsApplication=true)]
 
-namespace App3.Droid
+namespace FarmLab.Droid
 {
 	
 	
@@ -26,17 +26,17 @@ namespace App3.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_in_right = global::App3.Droid.Resource.Animation.slide_in_right;
-			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_out_left = global::App3.Droid.Resource.Animation.slide_out_left;
-			global::Xamarin.Auth._MobileServices.Resource.Drawable.ic_arrow_back = global::App3.Droid.Resource.Drawable.ic_arrow_back;
-			global::Xamarin.Auth._MobileServices.Resource.Id.webview = global::App3.Droid.Resource.Id.webview;
-			global::Xamarin.Auth._MobileServices.Resource.Layout.activity_webview = global::App3.Droid.Resource.Layout.activity_webview;
-			global::Xamarin.Auth._MobileServices.Resource.String.ApplicationName = global::App3.Droid.Resource.String.ApplicationName;
-			global::Xamarin.Auth._MobileServices.Resource.String.Hello = global::App3.Droid.Resource.String.Hello;
-			global::Xamarin.Auth._MobileServices.Resource.String.title_activity_webview = global::App3.Droid.Resource.String.title_activity_webview;
-			global::PCLCrypto.Resource.String.ApplicationName = global::App3.Droid.Resource.String.ApplicationName;
-			global::PCLCrypto.Resource.String.Hello = global::App3.Droid.Resource.String.Hello;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::App3.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_in_right = global::FarmLab.Droid.Resource.Animation.slide_in_right;
+			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_out_left = global::FarmLab.Droid.Resource.Animation.slide_out_left;
+			global::Xamarin.Auth._MobileServices.Resource.Drawable.ic_arrow_back = global::FarmLab.Droid.Resource.Drawable.ic_arrow_back;
+			global::Xamarin.Auth._MobileServices.Resource.Id.webview = global::FarmLab.Droid.Resource.Id.webview;
+			global::Xamarin.Auth._MobileServices.Resource.Layout.activity_webview = global::FarmLab.Droid.Resource.Layout.activity_webview;
+			global::Xamarin.Auth._MobileServices.Resource.String.ApplicationName = global::FarmLab.Droid.Resource.String.ApplicationName;
+			global::Xamarin.Auth._MobileServices.Resource.String.Hello = global::FarmLab.Droid.Resource.String.Hello;
+			global::Xamarin.Auth._MobileServices.Resource.String.title_activity_webview = global::FarmLab.Droid.Resource.String.title_activity_webview;
+			global::PCLCrypto.Resource.String.ApplicationName = global::FarmLab.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::FarmLab.Droid.Resource.String.Hello;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::FarmLab.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

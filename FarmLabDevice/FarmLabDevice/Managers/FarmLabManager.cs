@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -9,8 +10,8 @@ namespace FarmLabDevice.Managers
 {
     public class FarmLabManager
     {
- //       public static string ApplicationUrl = @"https://FarmLab.azurewebsites.net";
-        public static string ApplicationUrl = @"http://localhost:52344";
+         public static string ApplicationUrl = @"https://FarmLab.azurewebsites.net";
+ //      public static string ApplicationUrl = @"http://localhost:52344";
 
         private readonly IMobileServiceTable<UserInfo> _userInfoTable;
         private readonly MobileServiceClient _currentClient;
@@ -29,15 +30,15 @@ namespace FarmLabDevice.Managers
         {
             try
             {
-                var authenticate = App.Authenticator.Authenticate();
+                var authenticate = await App.Authenticator.Authenticate();
 
-                var result = await CurrentClient.InvokeApiAsync("api/values", System.Net.Http.HttpMethod.Get, null);
+             //   var result = await CurrentClient.InvokeApiAsync("api/values", System.Net.Http.HttpMethod.Get, null);
 
-                var items = await _userInfoTable
+             //   var items = await _userInfoTable
                     //   .Where(item => !item.Done)
-                    .ToEnumerableAsync();
+              //      .ToEnumerableAsync();
 
-                return new ObservableCollection<UserInfo>(items);
+                return new ObservableCollection<UserInfo>(new List<UserInfo>());
             }
             catch (MobileServiceInvalidOperationException msioe)
             {

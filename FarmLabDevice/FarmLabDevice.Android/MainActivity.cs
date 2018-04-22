@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using FarmLabDevice;
 using FarmLabDevice.Managers;
 using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
 
-namespace FarmLabDevice.Droid
+namespace FarmLab.Droid
 {
     [Activity(Label = "FarmLab", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IAuthenticate
@@ -39,8 +41,14 @@ namespace FarmLabDevice.Droid
             try
             {
                 // Sign in with Facebook login using a server-managed flow.
-                _user = await FarmLabManager.DefaultManager.CurrentClient.LoginAsync(this,
-                    MobileServiceAuthenticationProvider.Google, "url_scheme_of_your_app");
+                var defaultManagerCurrentClient = FarmLabManager.DefaultManager.CurrentClient;
+                var provider = MobileServiceAuthenticationProvider.Google;
+                //new MobileServiceUIAuthentication(this, defaultManagerCurrentClient, provider.ToString(), "farmlab",
+                //    null);
+
+                await defaultManagerCurrentClient.LogoutAsync();
+                _user = await defaultManagerCurrentClient.LoginAsync(this, provider, "farmlab", new Dictionary<string, string>());
+
                 if (_user != null)
                 {
                     message = $"you are now signed-in as {_user.UserId}.";
