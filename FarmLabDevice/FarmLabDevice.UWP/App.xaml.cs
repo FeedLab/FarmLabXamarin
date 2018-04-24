@@ -64,6 +64,18 @@ namespace FarmLabDevice.UWP
             Window.Current.Activate();
         }
 
+
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            if (args.Kind == ActivationKind.Protocol)
+            {
+                ProtocolActivatedEventArgs protocolArgs = args as ProtocolActivatedEventArgs;
+      //          TodoItemManager.DefaultManager.CurrentClient.ResumeWithURL(protocolArgs.Uri);
+            }
+
+            base.OnActivated(args);
+        }
+
         /// <summary>
         /// Invoked when Navigation to a certain page fails
         /// </summary>

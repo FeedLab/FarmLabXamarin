@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:FarmLabDevice.Converters;assembly=FarmLabDevice"
+             xmlns:ioc="clr-namespace:Prism.Ioc;assembly=Prism.Forms"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:extension="clr-namespace:FarmLabDevice.Extension;assembly=FarmLabDevice"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="FarmLabDevice.Views.MainPage"
+             BackgroundColor="White" Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ioc:ContainerProvider x:TypeArguments="converters:LocalImagePathConverter" x:Key="LocalImagePathConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Label Text="Welcome to Pigfarm Online" FontAttributes="Bold" FontSize="26" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" />
+
+        <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="60*" />
+                <ColumnDefinition Width="20*" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Column="1" HasShadow="True" BackgroundColor="Azure" CornerRadius="15" OutlineColor="Azure">
+                <StackLayout Orientation="Vertical">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Column="0" Margin="8,-8,8,8" HorizontalOptions="CenterAndExpand" Text="Select a login method" FontSize="20" />
+
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="8">
+                            <Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.facebook_logo_256.png}">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTapGestureFaceBook" />
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                            <Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.google_logo_256.png}">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTapGestureGoogle" />
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                            <Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.windows_logo_256.png}">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTapGestureMicrosoft" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <!--<Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.facebook_logo_256.png}" />
+                            <Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.google_logo_256.png}" />
+                            <Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.windows_logo_256.png}" />-->
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

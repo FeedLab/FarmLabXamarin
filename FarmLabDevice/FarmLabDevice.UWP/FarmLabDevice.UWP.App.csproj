@@ -151,6 +151,9 @@
     <PackageReference Include="Microsoft.Azure.Mobile.Client">
       <Version>4.0.2</Version>
     </PackageReference>
+    <PackageReference Include="Prism.Unity.Forms">
+      <Version>7.1.0.123-pre</Version>
+    </PackageReference>
     <PackageReference Include="Xam.Plugins.Settings">
       <Version>3.1.1</Version>
     </PackageReference>
@@ -159,9 +162,14 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FarmLabDevice\FarmLabDevice.csproj">
-      <Project>{C19FA564-2066-40F4-B119-A7B1849203D1}</Project>
+      <Project>{17CC25DE-F395-4C06-A91F-589CC5984812}</Project>
       <Name>FarmLabDevice</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsDesktop, Version=10.0.16299.0">
+      <Name>Windows Desktop Extensions for the UWP</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

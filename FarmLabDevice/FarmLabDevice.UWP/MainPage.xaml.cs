@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
+using Windows.Web.Http.Filters;
 using FarmLabDevice.Managers;
 using Microsoft.WindowsAzure.MobileServices;
 
@@ -14,7 +15,7 @@ namespace FarmLabDevice.UWP
         {
             this.InitializeComponent();
 
-            FarmLabDevice.App.Init(this);
+     //       FarmLabDevice.App.Init(this);
 
             LoadApplication(new FarmLabDevice.App());
         }
@@ -32,7 +33,14 @@ namespace FarmLabDevice.UWP
                     var defaultManagerCurrentClient = FarmLabManager.DefaultManager.CurrentClient;
                     var provider = MobileServiceAuthenticationProvider.Google;
 
+                    //HttpBaseProtocolFilter baseFilter = new HttpBaseProtocolFilter();
+                    //foreach (var cookie in baseFilter.CookieManager.GetCookies(new Uri("https://FarmLab.azurewebsites.net")))
+                    //{
+                    //    baseFilter.CookieManager.DeleteCookie(cookie);
+                    //}
+
                     //     _user = await defaultManagerCurrentClient.LoginAsync(provider, "localhost:52344); ///.auth/login/google");
+                    await defaultManagerCurrentClient.LogoutAsync();
                     _user = await defaultManagerCurrentClient.LoginAsync(provider, "farmlab");
 
 

@@ -30,7 +30,7 @@ namespace FarmLabDevice.Managers
         {
             try
             {
-                var authenticate = await App.Authenticator.Authenticate();
+         //       var authenticate = await App.Authenticator.Authenticate();
 
              //   var result = await CurrentClient.InvokeApiAsync("api/values", System.Net.Http.HttpMethod.Get, null);
 
