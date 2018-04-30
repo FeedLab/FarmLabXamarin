@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using FarmLabDevice.Managers;
 using Prism.Navigation;
 
 namespace FarmLabDevice.ViewModels
@@ -24,13 +25,13 @@ namespace FarmLabDevice.ViewModels
             Title = "Welcome to FarmLab";
             ImagePathGoogle = "FarmLabDevice.Media.Images.Media/Images/google_plus_logo_128.png";
             ImagePathFaceBook = "FarmLabDevice.Media.Images.Media/Images/facebook_logo_128.png";
-            ImagePathMicrosoft = "FarmLabDevice.Media.Images.Media/Images/Windows_logo_128.png";
+            ImagePath = "FarmLabDevice.Media.Images.Media/Images/Windows_logo_128.png";
         }
 
         public string Title { get; set; }
         public string ImagePathGoogle { get; set; }
         public string ImagePathFaceBook{ get; set; }
-        public string ImagePathMicrosoft{ get; set; }
+        public string ImagePath { get; set; }
 
         public async Task ExecuteButtonFacebook()
         {
@@ -44,6 +45,7 @@ namespace FarmLabDevice.ViewModels
 
         public async Task ExecuteButtonGoogle()
         {
+            await FarmLabManager.DefaultManager.GetUserInfoItemsAsync();
             await _navigationService.NavigateAsync("InitialFarmPage");
         }
 

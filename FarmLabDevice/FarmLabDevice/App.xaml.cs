@@ -13,6 +13,8 @@ namespace FarmLabDevice
 {
 	public partial class App : PrismApplication
     {
+        public static IAuthenticate Authenticator { get; private set; }
+
         public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
         protected override async void OnInitialized()
@@ -62,6 +64,11 @@ namespace FarmLabDevice
             {
                 Content = layout
             };
+        }
+
+        public static void Init(IAuthenticate authenticator)
+        {
+            Authenticator = authenticator;
         }
     }
 }

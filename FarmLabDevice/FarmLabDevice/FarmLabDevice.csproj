@@ -5,14 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Media\Images\facebook_logo_128.png" />
-    <None Remove="Media\Images\facebook_logo_256.png" />
-    <None Remove="Media\Images\google_logo_256.png" />
-    <None Remove="Media\Images\google_plus_logo_128.png" />
-    <None Remove="Media\Images\windows_logo_256.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="Media\Images\facebook_logo_128.png" />
     <EmbeddedResource Include="Media\Images\facebook_logo_256.png" />
     <EmbeddedResource Include="Media\Images\google_logo_256.png" />
@@ -23,22 +15,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.2" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.1.0.123-pre" />
-    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\MainPage.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Views\InitialFarmPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+    <None Update="Media\Images\Windows_logo_128.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Windows_logo_128.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

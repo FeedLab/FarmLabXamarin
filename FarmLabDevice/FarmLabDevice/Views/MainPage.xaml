@@ -35,26 +35,24 @@
                         <Label Grid.Column="0" Margin="8,-8,8,8" HorizontalOptions="CenterAndExpand" Text="Select a login method" FontSize="20" />
 
                         <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="8">
-                            <Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.facebook_logo_256.png}">
+                            
+                            <Image Margin="16" Opacity="0.4" IsEnabled="False" Source="{extension:ImageResource FarmLabDevice.Media.Images.facebook_logo_256.png}">
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OnTapGestureFaceBook" />
                                 </Image.GestureRecognizers>
                             </Image>
 
-                            <Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.google_logo_256.png}">
+                            <Image Margin="16" Opacity="1.0" Source="{extension:ImageResource FarmLabDevice.Media.Images.google_logo_256.png}">
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OnTapGestureGoogle" />
                                 </Image.GestureRecognizers>
                             </Image>
 
-                            <Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.windows_logo_256.png}">
+                            <Image Margin="16" Opacity="0.4" IsEnabled="False" Source="{extension:ImageResource FarmLabDevice.Media.Images.windows_logo_256.png}">
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OnTapGestureMicrosoft" />
                                 </Image.GestureRecognizers>
                             </Image>
-                            <!--<Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.facebook_logo_256.png}" />
-                            <Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.google_logo_256.png}" />
-                            <Image Margin="16" Source="{extension:ImageResource FarmLabDevice.Media.Images.windows_logo_256.png}" />-->
                         </StackLayout>
                     </Grid>
                 </StackLayout>

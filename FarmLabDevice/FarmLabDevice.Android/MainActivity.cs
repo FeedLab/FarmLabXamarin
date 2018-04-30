@@ -27,8 +27,9 @@ namespace FarmLab.Droid
             // Initialize Xamarin Forms
             Forms.Init(this, bundle);
 
+
             // Initialize the authenticator before loading the app.
-       //     App.Init(this);
+            App.Init(this);
 
             // Load the main application
             LoadApplication(new App());
