@@ -41,15 +41,11 @@ namespace FarmLab.Droid
             var message = string.Empty;
             try
             {
-                // Sign in with Facebook login using a server-managed flow.
                 var defaultManagerCurrentClient = FarmLabManager.DefaultManager.CurrentClient;
                 var provider = MobileServiceAuthenticationProvider.Google;
-                //new MobileServiceUIAuthentication(this, defaultManagerCurrentClient, provider.ToString(), "farmlab",
-                //    null);
 
-                await defaultManagerCurrentClient.LogoutAsync();
-                _user = await defaultManagerCurrentClient.LoginAsync(this, provider, "farmlab", new Dictionary<string, string>());
-
+                // Sign in with Facebook login using a server-managed flow.
+                _user = await defaultManagerCurrentClient.LoginAsync(this, provider, "FarmLab");
                 if (_user != null)
                 {
                     message = $"you are now signed-in as {_user.UserId}.";
