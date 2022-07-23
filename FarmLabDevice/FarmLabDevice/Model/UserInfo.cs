@@ -1,22 +1,51 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 
 namespace FarmLabDevice.Model
 {
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum RoleTypes
+    {
+        Admin,
+        FarmAdmin,
+        FarmUser,
+        FarmReader
+    }
+
     public class UserInfo
     {
-        [Newtonsoft.Json.JsonProperty("Id")]
-        public string Id { get; set; }
+        public UserInfo()
+        {
+        }
 
-        [Newtonsoft.Json.JsonProperty("UserIdentifier")]
-        public string UserIdentifier { get; set; }
+        //public UserInfo(UserInfo userInfo)
+        //{
+        //    CopyFrom(userInfo);
+        //}
 
-        [Newtonsoft.Json.JsonProperty("FarmId")]
-        public Guid FarmId { get; set; }
+        public void CopyFrom(UserInfo userInfo)
+        {
+            ExternalUserReference = userInfo.ExternalUserReference;
+            DisplayName = userInfo.DisplayName;
+            FarmCreated = userInfo.FarmCreated;
+            LastVisiting = userInfo.LastVisiting;
+            EmailAddress = userInfo.EmailAddress;
+            EmailConfirmed = userInfo.EmailConfirmed;
+        }
 
-        [Newtonsoft.Json.JsonProperty("FarmName")]
-        public string FarmName { get; set; }
+        public string ExternalUserReference { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("FarmCreated")]
+        public RoleTypes Role { get; set; }
+
+        public string EmailAddress { get; set; }
+
+        public string DisplayName { get; set; }
+
+        public bool EmailConfirmed { get; set; }
+
         public DateTime FarmCreated { get; set; }
+
+        public DateTime LastVisiting { get; set; }
     }
 }

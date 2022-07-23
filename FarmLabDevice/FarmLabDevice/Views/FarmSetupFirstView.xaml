@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extension="clr-namespace:FarmLabDevice.Extension;assembly=FarmLabDevice"
+             x:Class="FarmLabDevice.Views.FarmSetupFirstView">
+    <ContentPage.Content>
+        <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Text="You are now ready to setup your farm" FontSize="18" FontAttributes="Bold" TextColor="Red"/>
+
+            <StackLayout Grid.Row="1" Orientation="Vertical">
+                <Label Text="Name of your farm" FontAttributes="Bold" />
+                <Entry Placeholder="Name of your farm" Text="{Binding FarmName}" />
+                <Label Text="Description" Margin="0,16,0,0" FontAttributes="Bold" />
+                <Entry Placeholder="A short description" Text="{Binding FarmDescription}" />
+            </StackLayout>
+
+            <Button 
+                Grid.Row="2"
+                Margin="16"
+                HorizontalOptions="CenterAndExpand"
+                BackgroundColor="MediumSeaGreen"
+                TextColor="White"
+                Command="{Binding CreateFarm}"
+                Text="Start creat my new farm" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

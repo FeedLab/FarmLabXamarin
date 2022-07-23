@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             x:Class="FarmLabDevice.Views.UserManagementViewTablet" Title="User Management">
+    <ContentPage.Content>
+        <StackLayout>
+            <syncfusion:SfListView
+                ItemsSource="{Binding UserInfos}" 
+                ItemSize="100">
+                <syncfusion:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.4*" />
+                                <RowDefinition Height="0.6*" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{Binding EmailAddress}" FontAttributes="Bold" TextColor="Teal" FontSize="21" />
+                            <StackLayout Grid.Row="1">
+                                <Label Text="{Binding DisplayName}" TextColor="Teal" FontSize="15"/>
+                                <Label Text="{Binding EmailAddress}" TextColor="Teal" FontSize="15"/>
+                                <Label Text="{Binding Role}" TextColor="Teal" FontSize="15"/>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

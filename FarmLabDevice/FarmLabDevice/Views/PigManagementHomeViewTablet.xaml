@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmLabDevice.Views.PigManagementHomeViewTablet" 
+             Icon="Icon.png" 
+             Title="Pig Management">
+    <ContentPage.Content>
+        <Grid
+            VerticalOptions="Center"
+            HorizontalOptions="Fill">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="8" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Button
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding CmdRegistration}" 
+                    ContentLayout="Top,0" 
+                    Text="User" 
+                    Image="Register_64.png" />
+
+            <Button
+                    Grid.Column="3"
+                    Grid.Row="0"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding CmdRegistration}" 
+                    ContentLayout="Top,0" 
+                    Text="User" 
+                    Image="Register_64.png" />
+
+            <Button
+                    Grid.Column="5"
+                    Grid.Row="0"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding CmdRegistration}" 
+                    ContentLayout="Top,0" 
+                    Text="User" 
+                    Image="Register_64.png" />
+
+            <Button
+                    Grid.Column="7"
+                    Grid.Row="0"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding CmdRegistration}" 
+                    ContentLayout="Top,0" 
+                    Text="User" 
+                    Image="Register_64.png" />
+
+
+
+            <Button
+                Grid.Column="1"
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding CmdRegistration}" 
+                ContentLayout="Top,0" 
+                Text="User" 
+                Image="Register_64.png" />
+
+            <Button
+                Grid.Column="3"
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding CmdRegistration}" 
+                ContentLayout="Top,0" 
+                Text="User" 
+                Image="Register_64.png" />
+
+            <Button
+                Grid.Column="5"
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding CmdRegistration}" 
+                ContentLayout="Top,0" 
+                Text="User" 
+                Image="Register_64.png" />
+
+            <Button
+                Grid.Column="7"
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding CmdRegistration}" 
+                ContentLayout="Top,0" 
+                Text="User" 
+                Image="Register_64.png" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

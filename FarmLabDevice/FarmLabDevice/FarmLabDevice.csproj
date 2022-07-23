@@ -5,22 +5,112 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Media\Images\Login_256.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="Media\Images\facebook_logo_128.png" />
     <EmbeddedResource Include="Media\Images\facebook_logo_256.png" />
     <EmbeddedResource Include="Media\Images\google_logo_256.png" />
     <EmbeddedResource Include="Media\Images\google_plus_logo_128.png" />
+    <EmbeddedResource Include="Media\Images\Login_256.png" />
     <EmbeddedResource Include="Media\Images\windows_logo_256.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.2" />
-    <PackageReference Include="Prism.Unity.Forms" Version="7.1.0.123-pre" />
-    <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
+    <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.1.1" />
+    <PackageReference Include="Prism.Forms" Version="7.1.0.431" />
+    <PackageReference Include="Prism.Plugin.Popups" Version="2.2.0.293" />
+    <PackageReference Include="Prism.Unity.Forms" Version="7.1.0.431" />
+    <PackageReference Include="RestSharp" Version="106.6.9" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.188" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="17.1.0.43" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.1.0.43" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Syncfusion.SfListView.XForms">
+      <HintPath>C:\Users\Jonny\.nuget\packages\syncfusion.xamarin.sflistview\16.1.0.37\lib\MonoAndroid10\Syncfusion.SfListView.XForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\MainViewTablet.xaml.cs">
+      <DependentUpon>MainViewTablet.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PasswordLoginViewTablet.xaml.cs">
+      <DependentUpon>PasswordLoginViewTablet.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PigManagementHomeViewTablet.xaml.cs">
+      <DependentUpon>PigManagementHomeViewTablet.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserManagementViewTablet.xaml.cs">
+      <DependentUpon>UserManagementViewTablet.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RegistrationHomeViewTablet.xaml.cs">
+      <DependentUpon>RegistrationHomeViewTablet.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserVerifyEMailView.xaml.cs">
+      <DependentUpon>UserVerifyEMailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\FarmSelectOneOfManyViewTablet.xaml.cs">
+      <DependentUpon>FarmSelectOneOfManyViewTablet.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\FarmSetupFirstView.xaml.cs">
+      <DependentUpon>FarmSetupFirstView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\FarmHomeViewTablet.xaml.cs">
+      <DependentUpon>FarmHomeViewTablet.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\PasswordLoginViewTablet.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Media\Images\Windows_logo_128.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Views\FarmHomeViewTablet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\FarmSelectOneOfManyViewTablet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\FarmSetupFirstView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MainViewTablet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\PasswordLoginViewTablet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\PigManagementHomeViewTablet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\RegistrationHomeViewTablet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\UserManagementViewTablet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\UserVerifyEMailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Windows_logo_128.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

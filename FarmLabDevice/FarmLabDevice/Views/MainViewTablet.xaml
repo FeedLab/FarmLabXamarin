@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:extension="clr-namespace:FarmLabDevice.Extension;assembly=FarmLabDevice"
+             prism:ViewModelLocator.AutowireViewModel="False" 
+             x:Class="FarmLabDevice.Views.MainViewTablet"
+             Icon="icon.png" Title=""
+             BackgroundImage="pigBackground.jpg">
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <Grid>
+                <Label Text="Welcome to Pigfarm Online" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" />
+
+                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="80*" />
+                        <ColumnDefinition Width="10*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Column="1" HasShadow="True" BackgroundColor="Azure" CornerRadius="15" BorderColor="Azure">
+                        <Grid>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Column="0" Grid.Row="0" Margin="8,-8,8,8" HorizontalOptions="CenterAndExpand" Text="Select a login method" FontSize="Large" />
+
+                            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="8">
+
+                                <Image WidthRequest="128" HeightRequest="128" Margin="16" Opacity="1.0" IsEnabled="True" VerticalOptions="CenterAndExpand" Source="{extension:ImageResource FarmLabDevice.Media.Images.Login_256.png}">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnTapGesturePassword" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
+                        </Grid>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

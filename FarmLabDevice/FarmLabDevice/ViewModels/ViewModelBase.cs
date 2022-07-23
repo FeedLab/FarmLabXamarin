@@ -12,17 +12,14 @@ namespace FarmLabDevice.ViewModels
 
         public virtual void OnNavigatedFrom(INavigationParameters parameters)
         {
-
         }
 
         public virtual void OnNavigatedTo(INavigationParameters parameters)
         {
-
         }
 
         public virtual void OnNavigatingTo(INavigationParameters parameters)
         {
-
         }
     }
 }

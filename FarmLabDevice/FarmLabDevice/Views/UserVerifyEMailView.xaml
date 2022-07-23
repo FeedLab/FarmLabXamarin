@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmLabDevice.Views.UserVerifyEMailView" Icon="Icon.png" Title="Verify your identity">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*" />
+                <ColumnDefinition Width="80*" />
+                <ColumnDefinition Width="15*" />
+            </Grid.ColumnDefinitions>
+
+            <Frame
+                Grid.Column="1"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                HasShadow="True" 
+                BackgroundColor="Azure" 
+                CornerRadius="15" 
+                BorderColor="Azure">
+                <StackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Verify Your Email Address"
+                        FontSize="Large" 
+                        TextColor="Black"
+                        VerticalOptions="StartAndExpand" 
+                        HorizontalOptions="StartAndExpand" />
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="We now need to verify your email address. We've sent an email to " ForegroundColor="Black" />
+                                <Span Text="{Binding EMailAddress, Mode=OneWay}" ForegroundColor="DimGray" FontAttributes="Bold"/>
+                                <Span Text=" to verify your address. Please click the link in that email to continue." ForegroundColor="Black" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Button 
+                        Margin="0,16,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        BackgroundColor="MediumSeaGreen"
+                        TextColor="White"
+                        Command="{Binding ContinueToLoginPage}"
+                        Text="Continue back to Login page" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

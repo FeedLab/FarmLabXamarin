@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Net.Http;
 using System.Threading.Tasks;
-using FarmLabDevice.Model;
 using Microsoft.WindowsAzure.MobileServices;
 
 namespace FarmLabDevice.Managers
@@ -11,34 +10,42 @@ namespace FarmLabDevice.Managers
     public class FarmLabManager
     {
          public static string ApplicationUrl = @"https://FarmLab.azurewebsites.net";
-    //   public static string ApplicationUrl = @"http://localhost:52344";
+        public static string ApplicationUrlLocal = @"http://82.183.31.17:5000";
 
-        private readonly IMobileServiceTable<UserInfo> _userInfoTable;
+  //      private readonly IMobileServiceTable<UserInfo> _userInfoTable;
         private readonly MobileServiceClient _currentClient;
 
         public FarmLabManager()
         {
-            _currentClient = new MobileServiceClient(ApplicationUrl);
-            _userInfoTable = _currentClient.GetTable<UserInfo>();
+            _currentClient =
+                new MobileServiceClient(ApplicationUrlLocal)
+                {
+                    AlternateLoginHost = new Uri(ApplicationUrl)
+                };
         }
 
         public static FarmLabManager DefaultManager { get; } = new FarmLabManager();
 
         public MobileServiceClient CurrentClient => _currentClient;
 
-        public async Task<ObservableCollection<UserInfo>> GetUserInfoItemsAsync(bool syncItems = false)
+        public async Task<bool> AuthenticateAsync(bool syncItems = false)
         {
             try
             {
-                var authenticate = await App.Authenticator.Authenticate();
+                var result = await App.Authenticator.Authenticate();
 
-             //   var result = await CurrentClient.InvokeApiAsync("api/values", System.Net.Http.HttpMethod.Get, null);
+                IDictionary<string, string> headerDictionary = new Dictionary<string, string>();
+                var response = await CurrentClient.InvokeApiAsync("Farm", HttpMethod.Get, null);
 
-             //   var items = await _userInfoTable
-                    //   .Where(item => !item.Done)
-              //      .ToEnumerableAsync();
+                var resultx = await CurrentClient.InvokeApiAsync("api/values", HttpMethod.Get, null);
 
-                return new ObservableCollection<UserInfo>(new List<UserInfo>());
+                return result;
+
+
+                //   var items = await _userInfoTable
+                //   .Where(item => !item.Done)
+                //      .ToEnumerableAsync();
+
             }
             catch (MobileServiceInvalidOperationException msioe)
             {
@@ -48,19 +55,19 @@ namespace FarmLabDevice.Managers
             {
                 Debug.WriteLine(@"Sync error: {0}", e.Message);
             }
-            return null;
+            return false;
         }
 
-        public async Task SaveTaskAsync(UserInfo item)
-        {
-            if (item.UserIdentifier == null)
-            {
-                await _userInfoTable.InsertAsync(item);
-            }
-            else
-            {
-                await _userInfoTable.UpdateAsync(item);
-            }
+        //    public async Task SaveTaskAsync(UserInfo item)
+        //    {
+        //        if (item.UserIdentifier == null)
+        //        {
+        //            await _userInfoTable.InsertAsync(item);
+        //        }
+        //        else
+        //        {
+        //            await _userInfoTable.UpdateAsync(item);
+        //        }
+        //    }
         }
     }
-}

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmLabDevice.Views.RegistrationHomeViewTablet" 
+             Icon="Icon.png" 
+             Title="Registrations">
+    <ContentPage.Content>
+        <Grid
+            VerticalOptions="Fill"
+            HorizontalOptions="Fill">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="8" />
+            </Grid.ColumnDefinitions>
+
+            <Grid
+                Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="8" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding CmdRegistration}" 
+                    ContentLayout="Top,0" 
+                    Text="User" 
+                    Image="Register_64.png" />
+
+                <Button
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding CmdRegistration}" 
+                    ContentLayout="Top,0" 
+                    Text="Sow" 
+                    Image="PigAdult_64.png" />
+
+                <Button
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding CmdRegistration}" 
+                    ContentLayout="Top,0" 
+                    Text="Boar" 
+                    Image="Duroc_Pig_64.png" />
+
+                <Button
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding CmdRegistration}" 
+                    ContentLayout="Top,0" 
+                    Text="Action" 
+                    Image="ShowEventTemplate_64.png" />
+
+                <Button
+                    Grid.Column="1"
+                    Grid.Row="5"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding CmdRegistration}" 
+                    ContentLayout="Top,0" 
+                    Text="Farm" 
+                    Image="Farm_64.png" />
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

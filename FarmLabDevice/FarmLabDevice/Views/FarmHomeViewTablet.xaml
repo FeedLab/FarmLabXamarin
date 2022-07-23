@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmLabDevice.Views.FarmHomeViewTablet" 
+             Icon="Icon.png" 
+             Title="{Binding WelcomeBackMessage}">
+    <ContentPage.Content>
+        <Grid 
+            VerticalOptions="Fill"
+            HorizontalOptions="Fill">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="8" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button
+                Grid.Column="1"
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding CmdPigManagement}" 
+                ContentLayout="Top,0" 
+                Text="Manage your pigs" 
+                Image="PigFarm_512.png" />
+
+            <Button
+                Grid.Column="3"
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding CmdFeedMixManagement}" 
+                ContentLayout="Top,0" 
+                Text="Mix your own feed" 
+                Image="Harvest_512.png" />
+
+            <Button
+                Grid.ColumnSpan="2"
+                Grid.Column="3"
+                Grid.Row="2"
+                BackgroundColor="Transparent"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Command="{Binding CmdUserManagement}" 
+                ContentLayout="Top,0" 
+                Text="User Management" 
+                Image="UserManagement_256.png" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

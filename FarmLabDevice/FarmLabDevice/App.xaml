@@ -4,4 +4,9 @@
                         xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
                         x:Class="FarmLabDevice.App">
 
+    <prism:PrismApplication.Resources>
+        <ResourceDictionary>
+
+        </ResourceDictionary>
+    </prism:PrismApplication.Resources>
 </prism:PrismApplication>
